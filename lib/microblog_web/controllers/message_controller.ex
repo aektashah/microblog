@@ -10,7 +10,8 @@ defmodule MicroblogWeb.MessageController do
   end
 
   def new(conn, _params) do
-    changeset = Blog.change_message(%Message{})
+    IO.inspect(conn.assigns)
+    changeset = Blog.change_message(%Message{user_id: conn.assigns[:current_user].id})
     render(conn, "new.html", changeset: changeset)
   end
 

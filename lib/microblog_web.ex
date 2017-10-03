@@ -39,8 +39,8 @@ defmodule MicroblogWeb do
 
       import MicroblogWeb.Router.Helpers
       import MicroblogWeb.ErrorHelpers
-      import MicroblogWeb.Gettext
-    end
+      import MicroblogWeb.Gettext 
+   end
   end
 
   def router do

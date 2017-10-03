@@ -14,7 +14,7 @@
   <tbody>
 <%= for message <- @messages do %>
     <tr>
-      <td><%= message.user %></td>
+      <td><%= message.user_id %></td>
       <td><%= message.post %></td>
       <td><%= message.hashtags %></td>
       <td><%= message.mentions %></td>
@@ -29,4 +29,6 @@
   </tbody>
 </table>
 
+<%= if @current_user do %>
 <span><%= link "New Message", to: message_path(@conn, :new) %></span>
+<% end %>
