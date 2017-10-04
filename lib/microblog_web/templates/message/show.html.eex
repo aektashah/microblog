@@ -1,28 +1,16 @@
-<h2>Show Message</h2>
-
-<ul>
-
-  <li>
-    <strong>User:</strong>
-    <%= @message.user_id %>
-  </li>
-
-  <li>
-    <strong>Post:</strong>
-    <%= @message.post %>
-  </li>
-
-  <li>
-    <strong>Hashtags:</strong>
-    <%= @message.hashtags %>
-  </li>
-
-  <li>
-    <strong>Mentions:</strong>
-    <%= @message.mentions %>
-  </li>
-
-</ul>
-
+<h2>Message</h2>
+<br>
+<div class="">
+  <div class="card">
+    <div class="card-body">
+      <p class="card-text">
+        <%= @message.post %><br>
+        <strong><span>@<%= @message.user_id %></span></strong>
+      </p>
+    </div>
+  </div>
+</div>
+<br>
 <span><%= link "Edit", to: message_path(@conn, :edit, @message) %></span>
+<br>
 <span><%= link "Back", to: message_path(@conn, :index) %></span>
