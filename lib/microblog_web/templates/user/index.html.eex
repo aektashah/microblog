@@ -6,7 +6,7 @@
       <div class="card">
         <div class="card-body">
           <p><strong><%= user.email %></strong></p>
-          <button>Follow</button>
+          <span><%= link "Follow", to: follow_path(@conn, :create, %{"follower_id" => user.id, "follower_id" => user.id}), class: "btn btn-default btn-xs" %></span>
         </div>
       </div>
       <span><%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>

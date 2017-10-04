@@ -7,6 +7,8 @@ defmodule Microblog.Activity.Follow do
   schema "follows" do
     field :following_id, :id
     field :follower_id, :id
+    field :following_count, :integer
+    field :follower_count, :integer 
 
     timestamps()
   end
