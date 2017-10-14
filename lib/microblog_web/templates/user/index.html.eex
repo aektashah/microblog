@@ -14,7 +14,7 @@
     </div>
   <% end %>
 
-<%= hidden_input f, :follower_id, value: @current_user.id %>
+# <%= hidden_input f, :follower_id, value: @current_user.id %>
 
 <%= hidden_input f, :following_id, value: user.id %>
 
@@ -24,7 +24,7 @@
 <% end %>
 
           <span><%= link "Follow", to: follow_path(@conn, :create, %{"follower_id" => @current_user.id, "following_id" => user.id}), class: "btn btn-default btn-xs" %></span>
-        
+
         </div>
       </div>
       <span><%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>
