@@ -6,7 +6,9 @@ defmodule MicroblogWeb.UserController do
 
   def index(conn, _params) do
     users = Accounts.list_users()
-    render(conn, "index.html", users: users)
+    changeset = Microblog.Activity.change_follow(%Microblog.Activity.Follow{})
+    render(conn, "index.html", users: users, changeset: changeset)
+    
   end
 
   def new(conn, _params) do
@@ -27,6 +29,8 @@ defmodule MicroblogWeb.UserController do
 
   def show(conn, %{"id" => id}) do
     user = Accounts.get_user!(id)
+    user = Microblog.Repo.preload(user, [{:following,:follower}])
+    IO.inspect user
     render(conn, "show.html", user: user)
   end
 

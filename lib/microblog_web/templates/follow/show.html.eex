@@ -1,9 +1,4 @@
 <h2>Show Follow</h2>
 
-<ul>
-  <li><%= :follow.follower_id %></li>
-  <li><%= :follow.following_id %></li>
-</ul>
-
 <span><%= link "Edit", to: follow_path(@conn, :edit, @follow) %></span>
 <span><%= link "Back", to: follow_path(@conn, :index) %></span>

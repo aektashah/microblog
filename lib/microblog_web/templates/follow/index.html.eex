@@ -10,6 +10,7 @@
   <tbody>
 <%= for follow <- @follows do %>
     <tr>
+      <p><%= follow.follower_id %></p> is following <p><%= follow.following_id %></p>
 
       <td class="text-right">
         <span><%= link "Show", to: follow_path(@conn, :show, follow), class: "btn btn-default btn-xs" %></span>

@@ -14,8 +14,8 @@ defmodule MicroblogWeb.FollowController do
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"follow" => follow_params}) do
-    case Activity.create_follow(follow_params) do
+  def create(conn,%{"follow" =>  %{"follower_id" => follower_id, "following_id" => following_id}}) do
+    case Activity.create_follow(%{"follower_id" => follower_id, "following_id" => following_id}) do
       {:ok, follow} ->
         conn
         |> put_flash(:info, "Follow created successfully.")
