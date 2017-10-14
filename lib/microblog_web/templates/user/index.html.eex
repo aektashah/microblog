@@ -14,7 +14,7 @@
     </div>
   <% end %>
 
-# <%= hidden_input f, :follower_id, value: @current_user.id %>
+<!-- <%= hidden_input f, :follower_id, value: @current_user.id %> -->
 
 <%= hidden_input f, :following_id, value: user.id %>
 
