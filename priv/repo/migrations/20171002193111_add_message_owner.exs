@@ -6,8 +6,6 @@ defmodule Microblog.Repo.Migrations.AddMessageOwner do
     alter table("messages") do
       remove :user
       add :user_id, references(:users)
-
-      timestamps()
     end
   end
 end
