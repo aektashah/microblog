@@ -2,8 +2,8 @@
 <br>
 <div class="row">
   <%= for message <- @messages do %>
-    <div class="col-sm-4">
-      <div class="card m-2">
+    <div class="">
+      <div class="">
         <div class="card-body">
           <div class="card-text" style="height: 5em">
             <p><%= message.post %></p>

@@ -2,7 +2,7 @@
 <br>
 <div class="row">
   <%= for user <- @users do %>
-    <div class="col-sm-4 my-2">
+    <div class="">
       <div class="card">
         <div class="card-body">
           <p><strong><%= user.email %></strong></p>
@@ -14,16 +14,13 @@
     </div>
   <% end %>
 
-<!-- <%= hidden_input f, :follower_id, value: @current_user.id %> -->
 
-<%= hidden_input f, :following_id, value: user.id %>
 
   <div class="form-group">
     <%= submit "Follow", class: "btn btn-primary" %>
   </div>
 <% end %>
 
-          <span><%= link "Follow", to: follow_path(@conn, :create, %{"follower_id" => @current_user.id, "following_id" => user.id}), class: "btn btn-default btn-xs" %></span>
 
         </div>
       </div>

@@ -23,11 +23,11 @@
       <div class="collapse navbar-collapse" id="main-navbar">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-	          <%= link "Messages", to: message_path(@conn, :index), class: "nav-link" %>
+	      <%= link "Messages", to: message_path(@conn, :index), class: "nav-link" %>
           </li>
-            <li class="nav-item">
+          <li class="nav-item">
               <%= link "Users", to: user_path(@conn, :index), class: "nav-link" %>
-            </li>
+          </li>
         </ul>
       </div>
 
