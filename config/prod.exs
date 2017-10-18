@@ -15,9 +15,11 @@ use Mix.Config
 # which you typically run after static files are built.
 config :microblog, MicroblogWeb.Endpoint,
   load_from_system_env: true,
-  url: [host: "microblog.snflwr.io", port: 8000],
+  url: [host: "localhost", port: {:system, "PORT"}],
   server: true,
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  cache_static_manifest: "priv/static/manifest.json",
+  root: ".",
+  version: Application.spec(:microblog, :vsn)
 
 # Do not print debug messages in production
 config :logger, level: :info
