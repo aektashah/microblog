@@ -15,7 +15,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :microblog, MicroblogWeb.Endpoint,
   load_from_system_env: true,
-  url: [host: "microblog.snflwr.io", port: 8000],
+  url: [host: "microblog.snflwr.io", port: 80],
   server: true,
   cache_static_manifest: "priv/static/manifest.json"
 
