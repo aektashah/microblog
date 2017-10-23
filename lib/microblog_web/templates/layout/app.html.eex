@@ -7,12 +7,52 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Microblog!</title>
+    <title>snflwr Blog</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
-   <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <img src="<%= static_path(@conn, "/images/logo.png") %>" width="20" height="20" class="d-inline-block align-center" alt="logo">
+      <a href="../" class="navbar-brand">snflwr</a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <!-- <ul class="nav navbar-nav">
+        <li>
+          <a href="#">Help</a>
+        </li>
+      </ul> -->
+
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li> -->
+        <%= if @current_user do %>
+          <span class="text-light">
+            <%= @current_user.email %> |
+            <%= link("logout", to: session_path(@conn, :logout), method: :delete) %>
+          </span>
+        <% else %>
+          <%= form_for @conn, session_path(@conn, :login),
+                [as: "user", class: "form-inline w-75"], fn f -> %>
+            <input type="text" placeholder="email"
+                               class="form-control" name="email">
+            <input type="submit" value="Log in" class="btn btn-primary">
+          <% end %>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</div>
+---
+   <!-- <nav class="navbar navbar-dark bg-dark navbar-expand-md">
       <a class="navbar-brand" href="#">Microblog</a>
 
       <button class="navbar-toggler" type="button"
@@ -37,30 +77,30 @@
           <%= link("logout", to: session_path(@conn, :logout), method: :delete) %>
         </span>
       <% else %>
-        <%= form_for @conn, session_path(@conn, :login), 
+        <%= form_for @conn, session_path(@conn, :login),
               [as: "user", class: "form-inline w-75"], fn f -> %>
-          <input type="text" placeholder="email" 
+          <input type="text" placeholder="email"
                              class="form-control" name="email">
           <input type="submit" value="Log in" class="btn btn-primary">
         <% end %>
       <% end %>
-   </nav>
+   </nav> -->
 
     <div class="container">
 
       <div class="row">
         <div class="col-sm-12 my-2">
-          <%= if get_flash(@conn, :info) do %> 
+          <%= if get_flash(@conn, :info) do %>
             <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
           <% end %>
-          <%= if get_flash(@conn, :error) do %> 
+          <%= if get_flash(@conn, :error) do %>
             <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
           <% end %>
         </div>
       </div>
 
       <div class="row">
-        <div class="">  
+        <div class="">
           <%= render @view_module, @view_template, assigns %>
         </div>
       </div>
