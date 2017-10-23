@@ -1,13 +1,15 @@
 <h2>Listing Messages</h2>
 <br>
 <div class="row">
-  <%= for message <- @messages do %>
+  <%= for message <- Enum.reverse(@messages) do %>
     <div class="">
       <div class="">
         <div class="card-body">
           <div class="card-text" style="height: 5em">
             <p><%= message.post %></p>
             <p><strong>user: <%=message.user_id %></strong></p>
+            <p>posted on: <%=message.inserted_at.month %>/<%=message.inserted_at.day %></p>
+            <p>posted at: <%=message.inserted_at.hour %>:<%= message.inserted_at.minute %></p>
           </div>
           <span><%= link "Show", to: message_path(@conn, :show, message), class: "btn btn-default btn-xs" %></span>
           <span><%= link "Edit", to: message_path(@conn, :edit, message), class: "btn btn-default btn-xs" %></span>
