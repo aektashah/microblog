@@ -13,46 +13,49 @@
 
   <body>
 
-<div class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
     <div class="navbar-header">
-      <img src="<%= static_path(@conn, "/images/logo.png") %>" width="20" height="20" class="d-inline-block align-center" alt="logo">
-      <a href="../" class="navbar-brand">snflwr</a>
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <a class="navbar-brand" href="#">Brand</a>
     </div>
-    <div class="navbar-collapse collapse" id="navbar-main">
-      <!-- <ul class="nav navbar-nav">
-        <li>
-          <a href="#">Help</a>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
         </li>
-      </ul> -->
-
-      <ul class="nav navbar-nav navbar-right">
-        <!-- <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li> -->
-        <%= if @current_user do %>
-          <span class="text-light">
-            <%= @current_user.email %> |
-            <%= link("logout", to: session_path(@conn, :logout), method: :delete) %>
-          </span>
-        <% else %>
-          <%= form_for @conn, session_path(@conn, :login),
-                [as: "user", class: "form-inline w-75"], fn f -> %>
-            <input type="text" placeholder="email"
-                               class="form-control" name="email">
-            <input type="submit" value="Log in" class="btn btn-primary">
-          <% end %>
-        <% end %>
       </ul>
-
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+      </ul>
     </div>
   </div>
-</div>
----
-   <!-- <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+</nav>
+<!--
+   <nav class="navbar navbar-dark bg-dark navbar-expand-md">
       <a class="navbar-brand" href="#">Microblog</a>
 
       <button class="navbar-toggler" type="button"
