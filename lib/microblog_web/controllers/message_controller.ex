@@ -1,13 +1,14 @@
 defmodule MicroblogWeb.MessageController do
   use MicroblogWeb, :controller
-
   alias Microblog.Blog
   alias Microblog.Blog.Message
+
 
   def index(conn, _params) do
     messages = Blog.list_messages()
     render(conn, "index.html", messages: messages)
   end
+
 
   def new(conn, _params) do
     IO.inspect(conn.assigns)
