@@ -1,11 +1,12 @@
 <div class="container middle">
   <div class="form-login">
     <h2>Please sign in</h2>
+    <br>
     <%= form_for @conn, session_path(@conn, :login),
             [as: "user", class: ""], fn f -> %>
         <!-- <label for="login-email" class="sr-only">Email address</label> -->
         <input type="text" placeholder="Email address"
-                           class="form-control" name="email" style="margin-top: 5px;">
+                           class="form-control" name="email">
         <!-- <label for="login-password" class="sr-only">Password</label>
         <input type="password" class="form-control" placeholder="Password"> -->
         <input type="submit" value="Log in" class="btn btn-secondary btn-block" style="margin-top: 5px;">
