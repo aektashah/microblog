@@ -4,10 +4,11 @@
 <%= render "form.html", Map.put(assigns, :action, message_path(@conn, :create)) %>
 
 <%= if @current_user do %>
+  <div>
     <%= link to: message_path(@conn, :index) do %>
       <p style="color: #000;"><u>Back</u></p>
     <% end %>
-    
+  </div>
 <% end %>
 <% else %>
     <%= link to: page_path(@conn, :index) do %>
