@@ -5,13 +5,9 @@
 }
 
 .middle {
-  justify-content: center;
+  justify-content: center !important;
 }
 
-.login-box {
-  background-color: #ececec;
-  padding: 15px;
-}
 
 .logo {
   justify-content: center !important;
@@ -21,6 +17,8 @@
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
+  background-color: #ececec;
+  padding: 15px;
 }
 
 .form-signin .form-control {

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container middle">
   <div class="form-login">
     <h2>Please sign in</h2>
     <%= form_for @conn, session_path(@conn, :login),
@@ -8,7 +8,7 @@
                            class="form-control" name="email">
         <!-- <label for="login-password" class="sr-only">Password</label>
         <input type="password" class="form-control" placeholder="Password"> -->
-        <input type="submit" value="Log in" class="btn btn-lg btn-primary btn-block">
+        <input type="submit" value="Log in" class="btn btn-lg btn-secondary btn-block">
     <% end %>
   </div>
 </div>
