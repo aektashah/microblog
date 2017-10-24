@@ -44,7 +44,7 @@
                 [as: "user", class: "form-inline w-75"], fn f -> %>
             <input type="text" placeholder="email"
                                class="form-control" name="email">
-            <input type="submit" value="Log in" class="btn btn-primary">
+            <input type="submit" value="Log in" class="btn btn-secondary">
           <% end %>
         <% end %>
       </div>
