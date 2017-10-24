@@ -2,6 +2,7 @@
 <div class="container">
 
 <%= render "form.html", Map.put(assigns, :action, message_path(@conn, :create)) %>
+
 <%= link to: message_path(@conn, :index) do %>
   <p style="color: #000;"><u>Back</u></p>
 <% end %>

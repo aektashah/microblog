@@ -15,9 +15,9 @@
       <%= error_tag f, :post %>
     </div>
 
-    <%= hidden_input f, :hashtags %>
+    <!-- <%= hidden_input f, :hashtags %>
 
-    <%= hidden_input f, :mentions %>
+    <%= hidden_input f, :mentions %> -->
 
     <div class="form-group">
       <%= submit "Submit", class: "btn btn-secondary" %>
