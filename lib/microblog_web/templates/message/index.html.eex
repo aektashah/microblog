@@ -15,7 +15,7 @@
           <td class="text-right">
             <span>
               <%= link "Show", to: message_path(@conn, :show, message), class: "btn btn-default btn-xs" %>
-              <%= if @current_user do %>
+              <!-- <%= if @current_user do %>
               <button id="like-add-button" class="btn btn-primary"
                      data-user-id="<%= @current_user.id %>">Like</button>
               <div id="message-likes"
@@ -23,7 +23,7 @@
                       data-message_id="<%= @message.id %>">
                       &nbsp;
               </div>
-              <% end %>
+              <% end %> -->
             </span>
           </td>
         </tr>
