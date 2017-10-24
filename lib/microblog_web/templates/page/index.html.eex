@@ -13,7 +13,7 @@
     <br>
     <div class="register">
       <%= link to: user_path(@conn, :new) do %>
-      <p><strong>New User? Register Here</strong><p>
+      <p style="color: #000;">New User? Register Here<p>
       <% end %>
     </div>
   </div>
