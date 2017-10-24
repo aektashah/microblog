@@ -1,5 +1,5 @@
 <div class="container">
-  <form class="form-login">
+  <!-- <form class="form-login"> -->
     <h2>Please sign in</h2>
     <%= form_for @conn, session_path(@conn, :login),
             [as: "user", class: "form-inline w-75"], fn f -> %>
@@ -10,7 +10,7 @@
         <input type="password" class="form-control" placeholder="Password"> -->
         <input type="submit" value="Log in" class="btn btn-lg btn-primary btn-block">
     <% end %>
-  </form>
+  <!-- </form> -->
 </div>
 
 
