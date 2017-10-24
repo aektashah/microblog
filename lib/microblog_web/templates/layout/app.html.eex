@@ -40,13 +40,12 @@
             <span class="text-dark">
               <%= @current_user.email %> |
               <%= link("logout", to: session_path(@conn, :logout), method: :delete) %>
-
             </span>
         </div>
       </div>
 
     </nav>
-
+    <% end %>
     <% else %>
 
     <nav class="navbar navbar-light bg-light">
