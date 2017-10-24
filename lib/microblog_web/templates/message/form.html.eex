@@ -6,6 +6,8 @@
   <% end %>
 
     <%= hidden_input f, :user_id  %>
+    <%= hidden_input f, :hashtags  %>
+    <%= hidden_input f, :mentions  %>
 
   <div class="form-group">
     <%= label f, :post, class: "control-label" %>
