@@ -54,7 +54,7 @@
       <div class="logo">
          <%= link to: page_path(@conn, :index), class: "navbar-brand" do %>
             <img src="<%= static_path(@conn, "/images/logo.png") %>" width="35" height="35" alt="logo">
-            <a class="navbar-brand" href="#"><strong>snflwr</strong></a>
+            <strong>snflwr</strong>
         <% end %>
       </div>
     </nav>
