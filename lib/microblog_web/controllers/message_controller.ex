@@ -21,7 +21,7 @@ defmodule MicroblogWeb.MessageController do
       {:ok, message} ->
         conn
         |> put_flash(:info, "Message created successfully.")
-        |> redirect(to: message_path(conn, :index, message))
+        |> redirect(to: message_path(conn, :show, message))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
