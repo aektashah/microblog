@@ -3,8 +3,8 @@
     <h2>Please sign in</h2>
     <%= form_for @conn, session_path(@conn, :login),
             [as: "user", class: "form-inline w-75"], fn f -> %>
-        <label for="login-email" class="sr-only">Email address</label>
-        <input type="text" placeholder="email"
+        <!-- <label for="login-email" class="sr-only">Email address</label> -->
+        <input type="text" placeholder="Email address"
                            class="form-control" name="email">
         <!-- <label for="login-password" class="sr-only">Password</label>
         <input type="password" class="form-control" placeholder="Password"> -->
