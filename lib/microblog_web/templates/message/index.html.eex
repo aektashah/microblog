@@ -1,6 +1,4 @@
-<h2>Listing Messages</h2>
-<br>
-<div class="row">
+
   <table class="table">
   <thead>
     <tr>
@@ -18,15 +16,15 @@
           <td class="text-right">
             <span>
               <%= link "Show", to: message_path(@conn, :show, message), class: "btn btn-default btn-xs" %>
-            
+
             </span>
           </td>
         </tr>
     <% end %>
   </tbody>
 </table>
-</div>
-<br>
+
+
 <%= if @current_user do %>
 <span><%= link "New Message", to: message_path(@conn, :new) %></span>
 <% end %>
