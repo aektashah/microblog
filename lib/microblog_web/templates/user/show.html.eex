@@ -1,4 +1,13 @@
-<h3><%= @user.email %></h3>
+<div class="container">
+  <div class="row">
+    <h3><%= @user.email %></h3>
+  </div>
 
-<span><%= link "Edit", to: user_path(@conn, :edit, @user) %></span>
-<span><%= link "Back", to: user_path(@conn, :index) %></span>
+  <div class="row">
+    <span><%= link "Edit", to: user_path(@conn, :edit, @user) %></span>
+  </div>
+  
+  <div>
+    <span><%= link "Back", to: user_path(@conn, :index) %></span>
+  </div>
+</div>
