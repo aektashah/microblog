@@ -16,13 +16,8 @@
             <span>
               <%= link "Show", to: message_path(@conn, :show, message), class: "btn btn-default btn-xs" %>
               <%= if @current_user do %>
-              <div id="message-likes"
-                   data-path="<%= like_path(@conn, :index) %>"
-                   data-message_id="<%= @message.id %>">
-                   <button id="like-add-button" class="btn btn-primary"
-                          data-user-id="<%= @current_user.id %>">Like</button>                                                  
-              </div>
-
+              <button id="like-add-button" class="btn btn-primary"
+                     data-user-id="<%= @current_user.id %>">Like</button>
               <% end %>
             </span>
           </td>
@@ -31,6 +26,11 @@
   </tbody>
 </table>
 
+<div id="message-likes"
+     data-path="<%= like_path(@conn, :index) %>"
+     data-message_id="<%= @message.id %>">
+    &nbsp;
+</div>
 
 <%= if @current_user do %>
 <span><%= link "New Message", to: message_path(@conn, :new) %></span>
