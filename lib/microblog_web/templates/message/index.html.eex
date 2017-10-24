@@ -18,9 +18,7 @@
           <td class="text-right">
             <span>
               <%= link "Show", to: message_path(@conn, :show, message), class: "btn btn-default btn-xs" %>
-              <!-- <%= if @current_user &&  @current_user.is_admin? do %>
-              <%= link "Delete", to: message_path(@conn, :delete, message), class: "btn btn-danger btn-xs" %>
-              <% end %> -->
+            
             </span>
           </td>
         </tr>
