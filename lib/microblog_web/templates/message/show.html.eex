@@ -4,25 +4,29 @@
    <p><strong>posted by user: @<%= @message.user_id %><strong></p>
    <br>
    <div class="d-inline-block">
-     <%= if @current_user do %> 
+     <%= if @current_user do %>
        <div>
          <button id="like-add-button" class="btn btn-primary"
                 data-user-id="<%= @current_user.id %>">Like</button>
        </div>
      <% end %>
    </div>
-                                                                     <div class="d-inline-block"> 
+    <div class="d-inline-block">
      <%= link "Back", to: message_path(@conn, :index), class: "btn btn-primary" %>
    </div>
-</div>                                                               <div id="message-likes"                                            data-path="<%= like_path(@conn, :index) %>"                    data-message_id="<%= @message.id %>">
-    &nbsp;                                                           </div>
+</div>
+<div id="message-likes"
+     data-path="<%= like_path(@conn, :index) %>"
+     data-message_id="<%= @message.id %>">
+    &nbsp;                                                           
+</div>
 
 <script id="likes-template" type="text/x-handlebars-template">
   <div class="m-2">
     <p>Likes by:</p>
       {{#each data}}
         <p>{{user_email}}</p>
-      {{else}}    
+      {{else}}
         <p>No likes yet.</p>
       {{/each}}
   </div>

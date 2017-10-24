@@ -1,5 +1,4 @@
-
-  <table class="table">
+<table class="table">
   <thead>
     <tr>
       <th>Subject</th>
@@ -16,7 +15,10 @@
           <td class="text-right">
             <span>
               <%= link "Show", to: message_path(@conn, :show, message), class: "btn btn-default btn-xs" %>
-
+              <%= if @current_user do %>
+              <button id="like-add-button" class="btn btn-primary"
+                     data-user-id="<%= @current_user.id %>">Like</button>
+              <% end %>
             </span>
           </td>
         </tr>
