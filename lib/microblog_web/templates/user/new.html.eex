@@ -1,5 +1,9 @@
 <h2>New User</h2>
+<div class="container"
+  <%= render "form.html", Map.put(assigns, :action, user_path(@conn, :create)) %>
 
-<%= render "form.html", Map.put(assigns, :action, user_path(@conn, :create)) %>
+<%= link to: user_path(@conn, :index) do %>
+  <p style="color: #000;"><u>Back</u></p>
+<% end %>
 
-<span><%= link "Back", to: user_path(@conn, :index) %></span>
+</div>
