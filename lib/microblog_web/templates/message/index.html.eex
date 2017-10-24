@@ -12,7 +12,7 @@
   <tbody id="feed">
     <%= for message <- Enum.reverse(@messages) do %>
         <tr>
-          <td><%= message.name %></td>
+          <td><%= message.post %></td>
           <td><%= message.inserted_at %></td>
           <td><%= link Microblog.Accounts.get_user(message.user_id).name, to: user_path(@conn, :show, Microblog.Accounts.get_user(message.user_id)) %></td>
           <td class="text-right">
