@@ -13,12 +13,15 @@
    </div>
     <div class="d-inline-block">
      <%= link "Back", to: message_path(@conn, :index), class: "btn btn-primary" %>
+     <%= if @current_user == @message.user_id do %>
+     <span><%= link "Delete", to: message_path(@conn, :delete, message), method: :delete, class: "btn btn-danger btn-xs" %></span>
+     <% end %>
    </div>
 </div>
 <div id="message-likes"
      data-path="<%= like_path(@conn, :index) %>"
      data-message_id="<%= @message.id %>">
-    &nbsp;                                                           
+    &nbsp;
 </div>
 
 <script id="likes-template" type="text/x-handlebars-template">
