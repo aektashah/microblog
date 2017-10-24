@@ -20,7 +20,7 @@
     <%= hidden_input f, :mentions %>
 
     <div class="form-group">
-      <%= submit "Submit", class: "btn btn-primary" %>
+      <%= submit "Submit", class: "btn btn-secondary" %>
     </div>
     <% end %>
   </div>
