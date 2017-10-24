@@ -1,21 +1,22 @@
-<div class="row">
-  <div class="col-lg-12">
-    <h1>Welcome to the Microblog</h1>
+<div class="container middle">
+  <div class="form-login">
+    <h3>Please sign in</h3>
     <br>
-  </div>
-
-  <div class="container">
-    <p><strong>Log In, You Rock</strong></p>	
-      <%= form_for @conn, session_path(@conn, :login),
-              [as: "user", class: "form-inline w-75"], fn f -> %>
-          <input type="text" placeholder="email"
-                             class="form-control" name="email">
-          <input type="submit" value="Log in" class="btn btn-primary">
+    <%= form_for @conn, session_path(@conn, :login),
+            [as: "user", class: ""], fn f -> %>
+        <!-- <label for="login-email" class="sr-only">Email address</label> -->
+        <input type="text" placeholder="Email address"
+                           class="form-control" name="email">
+        <!-- <label for="login-password" class="sr-only">Password</label>
+        <input type="password" class="form-control" placeholder="Password"> -->
+        <input type="submit" value="Log in" class="btn btn-secondary btn-block" style="margin-top: 5px;">
+    <% end %>
+    <br>
+    <div class="register">
+      <h3>New User?</h3>
+      <%= link to: user_path(@conn, :new) do %>
+      <p style="color: #000;"><u>Register Here</u><p>
       <% end %>
-					
-    <div class="">  
-      <%= link "Register A New Account", to: user_path(@conn, :new) %>
     </div>
   </div>
-
 </div>

@@ -1,37 +1,23 @@
-<h2>Users</h2>
-<br>
-<div class="row">
-  <%= for user <- @users do %>
-    <div class="">
-      <div class="card">
-        <div class="card-body">
-          <p><strong><%= user.email %></strong></p>
-
-<%= form_for @changeset, follow_path(@conn, :create), fn f -> %>
-  <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
-    </div>
-  <% end %>
-
-
-
-  <div class="form-group">
-    <%= submit "Follow", class: "btn btn-primary" %>
-  </div>
-<% end %>
-
-
-        </div>
-      </div>
-      <span><%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>
-      <span><%= link "Edit", to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" %></span>
-      <span><%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
-    </div>
-  <% end %>
-</div>
-<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody id="users">
+    <%= for user <- @users do %>
+        <tr>
+          <td><%= user.email %></td>
+          <td class="text-right">
+            <span>
+              <%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %>
+            </span>
+          </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= if !@current_user do %>
-<span><%= link "New User", to: user_path(@conn, :new) %></span>
+<span><%= link "New User? Register Here", to: user_path(@conn, :new) %></span>
 <% end %>
