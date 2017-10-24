@@ -12,9 +12,9 @@
   </head>
 
   <body>
-
+   <%= if @current_user do %>
    <nav class="navbar navbar-light bg-light">
-     <div class="justify-content-md-center">
+     <div class="">
        <img src="<%= static_path(@conn, "/images/logo.png") %>" width="35" height="35" class="d-inline-block align-center" alt="logo">
        <a class="navbar-brand" href="#"><strong>snflwr</strong></a>
      </div>
@@ -27,33 +27,43 @@
       <div class="collapse navbar-collapse" id="main-navbar">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-	      <%= link "Messages", to: message_path(@conn, :index), class: "nav-link" %>
+	           <%= link "Messages", to: message_path(@conn, :index), class: "nav-link" %>
           </li>
           <li class="nav-item">
-              <%= link "Users", to: user_path(@conn, :index), class: "nav-link" %>
+             <%= link "Users", to: user_path(@conn, :index), class: "nav-link" %>
           </li>
         </ul>
 
 
-      <div class="nav navbar-nav navbar-right">
-        <%= if @current_user do %>
-          <span class="text-light">
-            <%= @current_user.email %> |
-            <%= link("logout", to: session_path(@conn, :logout), method: :delete) %>
-          </span>
-        <% else %>
-          <%= form_for @conn, session_path(@conn, :login),
-                [as: "user", class: "form-inline w-75"], fn f -> %>
-            <input type="text" placeholder="email"
-                               class="form-control" name="email">
-            <input type="submit" value="Log in" class="btn btn-secondary">
-          <% end %>
-        <% end %>
-      </div>
+        <div class="nav navbar-nav navbar-right">
+          <!-- <%= if @current_user do %> -->
+            <span class="text-light">
+              <%= @current_user.email %> |
+              <%= link("logout", to: session_path(@conn, :logout), method: :delete) %>
+            </span>
+          <!-- <% else %>
+            <%= form_for @conn, session_path(@conn, :login),
+                  [as: "user", class: "form-inline w-75"], fn f -> %>
+              <input type="text" placeholder="email"
+                                 class="form-control" name="email">
+              <input type="submit" value="Log in" class="btn btn-secondary">
+            <% end %>
+          <% end %> -->
+        </div>
       </div>
 
     </nav>
 
+    <% else %>
+
+    <nav class="navbar navbar-light bg-light">
+      <div class="">
+        <img src="<%= static_path(@conn, "/images/logo.png") %>" width="35" height="35" class="d-inline-block align-center" alt="logo">
+        <a class="navbar-brand" href="#"><strong>snflwr</strong></a>
+      </div>
+    </nav>
+
+    <% end %>
 
 
     <div class="container">
