@@ -6,8 +6,8 @@
   <div class="row">
     <span><%= link "Edit", to: user_path(@conn, :edit, @user) %></span>
   </div>
-  
-  <div>
+
+  <div class="row">
     <span><%= link "Back", to: user_path(@conn, :index) %></span>
   </div>
 </div>
