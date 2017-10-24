@@ -74,9 +74,7 @@
       </div>
 
       <div class="row">
-        <div class="">
           <%= render @view_module, @view_template, assigns %>
-        </div>
       </div>
 
     </div> <!-- container -->

@@ -8,8 +8,14 @@
                            class="form-control" name="email">
         <!-- <label for="login-password" class="sr-only">Password</label>
         <input type="password" class="form-control" placeholder="Password"> -->
+        <br>
         <input type="submit" value="Log in" class="btn btn-lg btn-secondary btn-block">
     <% end %>
+    <br>
+    <div class="register">
+      <h2>Register</h2>
+      <p><%= link "Register A New Account", to: user_path(@conn, :new) %></p>
+    </div>
   </div>
 </div>
 
