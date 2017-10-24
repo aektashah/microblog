@@ -5,7 +5,7 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="form-group col-md-4">
     <%= label f, :email, class: "control-label" %>
     <%= text_input f, :email, class: "form-control" %>
     <%= error_tag f, :email %>
