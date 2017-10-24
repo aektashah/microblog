@@ -36,7 +36,10 @@ defmodule Microblog.Blog do
       ** (Ecto.NoResultsError)
 
   """
-  def get_message!(id), do: Repo.get!(Message, id)
+  def get_message!(id) do
+ 		Repo.get!(Message, id)
+ 		|> Repo.preload(:user)
+ 	end
 
   @doc """
   Creates a message.
@@ -54,6 +57,7 @@ defmodule Microblog.Blog do
     %Message{}
     |> Message.changeset(attrs)
     |> Repo.insert()
+    |> Repo.preload(:user)
   end
 
   @doc """
@@ -72,6 +76,7 @@ defmodule Microblog.Blog do
     message
     |> Message.changeset(attrs)
     |> Repo.update()
+    |> Repo.preload(:user)
   end
 
   @doc """
