@@ -13,12 +13,9 @@
     <% end %>
     <br>
     <div class="register">
+      <%= link to: user_path(@conn, :new) do %>
       <h2>Register</h2>
-      <div class="text-center">
-        <%= link "Register A New Account", to: user_path(@conn, :new) do %>
-        <h2>Register</h2>
-        <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
