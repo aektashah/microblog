@@ -31,7 +31,7 @@
               <%= link "Users", to: user_path(@conn, :index), class: "nav-link" %>
           </li>
         </ul>
-      </div>
+
 
       <div class="nav navbar-nav navbar-right">
         <%= if @current_user do %>
@@ -47,6 +47,7 @@
             <input type="submit" value="Log in" class="btn btn-secondary">
           <% end %>
         <% end %>
+      </div>
       </div>
 
     </nav>
