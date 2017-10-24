@@ -7,10 +7,11 @@
     <%= link to: message_path(@conn, :index) do %>
       <p style="color: #000;"><u>Back</u></p>
     <% end %>
-
+<% end %>
 <% else %>
     <%= link to: page_path(@conn, :index) do %>
     <p style="color: #000;"><u>Back</u></p>
+    <% end %>
 <% end %>
 
 </div>
