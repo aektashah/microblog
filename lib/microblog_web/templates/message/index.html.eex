@@ -14,7 +14,7 @@
         <tr>
           <td><%= message.post %></td>
           <td><%= message.inserted_at %></td>
-          <td><%= message.user_id.email %></td>
+          <td><%= message.user.email %></td>
           <td class="text-right">
             <span>
               <%= link "Show", to: message_path(@conn, :show, message), class: "btn btn-default btn-xs" %>
