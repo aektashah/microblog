@@ -1,19 +1,19 @@
 <div class="container middle">
   <div class="row">
     <div class="login-box">
-    <div class="login">
-      <h2>Log In</h2>
-      <p><%= form_for @conn, session_path(@conn, :login),
-              [as: "user", class: "form-inline w-75"], fn f -> %>
-          <input type="text" placeholder="email"
-                             class="form-control" name="email">
-          <input type="submit" value="Log in" class="btn btn-primary">
-          <% end %></p>
-      </div>
-      <div class="register">
-        <h2>Register</h2>
-        <p><%= link "Register A New Account", to: user_path(@conn, :new) %></p>
-      </div>
+      <div class="login">
+        <h2>Log In</h2>
+        <p><%= form_for @conn, session_path(@conn, :login),
+                [as: "user", class: "form-inline w-75"], fn f -> %>
+            <input type="text" placeholder="email"
+                               class="form-control" name="email">
+            <input type="submit" value="Log in" class="btn btn-primary">
+            <% end %></p>
+        </div>
+        <div class="register">
+          <h2>Register</h2>
+          <p><%= link "Register A New Account", to: user_path(@conn, :new) %></p>
+        </div>
     </div>
   </div>
 </div>
