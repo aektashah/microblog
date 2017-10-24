@@ -8,4 +8,8 @@ defmodule Microblog.Helpers do
     end
   end
 
+  def get_user(id) do
+    Microblog.Accounts.get_user!(id)
+  end 
+
 end
