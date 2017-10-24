@@ -1,5 +1,15 @@
 @import "bootstrap";
 
+.btn-secondary {
+  background-color: #f6de8f !important;
+  border-color: #f6de8f !important;
+}
+
+.btn-secondary:hover {
+  background-color: #fdcd2b !important;
+  border-color: #fdcd2b !important;
+}
+
 .navbar {
   border-bottom: 1px solid #ececec;
 }
