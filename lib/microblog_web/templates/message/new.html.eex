@@ -1,7 +1,7 @@
 <h2>Post A New Message</h2>
-<row>
+<div class="container">
 
 <%= render "form.html", Map.put(assigns, :action, message_path(@conn, :create)) %>
 <span><%= link "Back", to: message_path(@conn, :index) %></span>
 
-</row>
+</div>
