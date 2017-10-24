@@ -1,24 +1,24 @@
 <div class="container">
    <p>Date: <%= @message.inserted_at %></p>
    <p><%= @message.post %></p>
-   <p><strong>posted by user: @<%= @message.user_id %><strong></p>
+   <p><strong>posted by: <%= @message.user.email %><strong></p>
    <br>
+   <div class="d-inline-block">
+    <%= link "Back", to: message_path(@conn, :index)%>
+  </div>
    <div class="d-inline-block">
      <%= if @current_user do %>
        <div>
-         <button id="like-add-button" class="btn btn-primary"
+         <button id="like-add-button" class="btn btn-secondary"
                 data-user-id="<%= @current_user.id %>">Like</button>
        </div>
      <% end %>
-   </div>
-    <div class="d-inline-block">
-     <%= link "Back", to: message_path(@conn, :index), class: "btn btn-primary" %>
    </div>
 </div>
 <div id="message-likes"
      data-path="<%= like_path(@conn, :index) %>"
      data-message_id="<%= @message.id %>">
-    &nbsp;                                                           
+    &nbsp;
 </div>
 
 <script id="likes-template" type="text/x-handlebars-template">
