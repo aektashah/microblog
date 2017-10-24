@@ -8,7 +8,7 @@
                            class="form-control" name="email">
         <!-- <label for="login-password" class="sr-only">Password</label>
         <input type="password" class="form-control" placeholder="Password"> -->
-        <input type="submit" value="Log in" class="btnbtn-secondary btn-block" style="margin-top: 5px;">
+        <input type="submit" value="Log in" class="btn btn-secondary btn-block" style="margin-top: 5px;">
     <% end %>
     <br>
     <div class="register">
