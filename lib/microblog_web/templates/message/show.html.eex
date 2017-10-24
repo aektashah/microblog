@@ -13,7 +13,7 @@
    </div>
     <div class="d-inline-block">
      <%= link "Back", to: message_path(@conn, :index), class: "btn btn-primary" %>
-     <span><%= link "Delete", to: message_path(@conn, :delete, message), method: :delete, class: "btn btn-danger btn-xs" %></span>
+     <%= link "Delete", to: message_path(@conn, :delete, message), method: :delete, class: "btn btn-danger btn-xs" %>
    </div>
 </div>
 <div id="message-likes"
