@@ -16,7 +16,7 @@
    <%= if @current_user do %>
    <nav class="navbar navbar-light bg-light text-center">
        <%= link to: message_path(@conn, :index), class: "navbar-brand" do %>
-       <img src="<%= static_path(@conn, "/images/logo.png") %>" width="35" height="35" class="d-inline-block align-center" alt="logo">
+       <img src="<%= static_path(@conn, "/images/logo.png") %>" width="35" height="35" alt="logo">
        <strong>snflwr</strong>
        <% end %>
      <button class="navbar-toggler" type="button"
