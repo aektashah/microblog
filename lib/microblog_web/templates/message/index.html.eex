@@ -1,3 +1,5 @@
+<%= if @current_user do %>
+ <%= render "form.html", Map.put(assigns, :action, message_path(@conn, :create)) %>
 <table class="table">
   <thead>
     <tr>
@@ -21,9 +23,8 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
-
-
-<%= if @current_user do %>
-<span><%= link "New Message", to: message_path(@conn, :new) %></span>
+<% else %>
+<span><%= link "Home", to: page_path(@conn, :index) %></span>
 <% end %>
