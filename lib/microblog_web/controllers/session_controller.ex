@@ -15,7 +15,7 @@ defmodule MicroblogWeb.SessionController do
       conn
       |> put_session(:user_id, nil)
       |> put_flash(:error, "No such user")
-      |> redirect(to: message_path(conn, :index))
+      |> redirect(to: page_path(conn, :index))
     end
   end
 
