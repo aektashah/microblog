@@ -25,6 +25,6 @@
 </table>
 <% end %>
 
-<% else %>
+<% if !@current_user do %>
 <span><%= link "Home", to: page_path(@conn, :index) %></span>
 <% end %>
