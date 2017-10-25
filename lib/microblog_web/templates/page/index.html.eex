@@ -7,6 +7,8 @@
         <!-- <label for="login-email" class="sr-only">Email address</label> -->
         <input type="text" placeholder="Email address"
                            class="form-control" name="email">
+        <input type="password" placeholder="Password"
+                           class="form-control" name="password">
         <!-- <label for="login-password" class="sr-only">Password</label>
         <input type="password" class="form-control" placeholder="Password"> -->
         <input type="submit" value="Log in" class="btn btn-secondary btn-block" style="margin-top: 5px;">
